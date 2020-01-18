@@ -1,0 +1,88 @@
+2020-01-16 21:25:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ADD[*] TABLE FIORI VALUES (?,?,?,?,?)"; expected "ALTER, ANALYZE"; SQL statement:
+ADD TABLE FIORI VALUES (?,?,?,?,?) [42001-200]
+2020-01-16 21:26:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FIORI" already exists; SQL statement:
+CREATE TABLE FIORI (NOME VARCHAR(30), ORIGINEGEOGRAFICA VARCHAR(30),PREZZO INT,QUANTITA INT,COLORE VARCHAR(30)); [42101-200]
+2020-01-16 21:26:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TABLE[*] FIORI VALUES (?,?,?,?,?)"; expected "identifier"; SQL statement:
+INSERT INTO TABLE FIORI VALUES (?,?,?,?,?) [42001-200]
+2020-01-16 21:27:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: This method is not allowed for a prepared statement; use a regular statement instead. [90130-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:290)
+	at it.unina.IS.dao.FioriDAO.readAll(FioriDAO.java:73)
+	at it.unina.IS.main.Main.main(Main.java:39)
+2020-01-16 21:27:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: This method is not allowed for a prepared statement; use a regular statement instead. [90130-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:290)
+	at it.unina.IS.dao.FioriDAO.readAll(FioriDAO.java:73)
+	at it.unina.IS.main.Main.main(Main.java:39)
+2020-01-16 21:32:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FIORI" not found; SQL statement:
+INSERT INTO FIORI VALUES (?,?,?,?,?) [42102-200]
+2020-01-16 21:35:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FIORI" already exists; SQL statement:
+CREATE TABLE FIORI (NOME VARCHAR(30), ORIGINEGEOGRAFICA VARCHAR(30),PREZZO INT,QUANTITA INT,COLORE VARCHAR(30)); [42101-200]
+2020-01-16 21:55:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FIORI" already exists; SQL statement:
+CREATE TABLE FIORI (NOME VARCHAR(30), ORIGINEGEOGRAFICA VARCHAR(30),PREZZO INT,QUANTITA INT,COLORE VARCHAR(30)); [42101-200]
+2020-01-16 21:57:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FIORI" already exists; SQL statement:
+CREATE TABLE FIORI (NOME VARCHAR(30), ORIGINEGEOGRAFICA VARCHAR(30),PREZZO INT,QUANTITA INT,COLORE VARCHAR(30)); [42101-200]
+2020-01-17 13:17:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE FIORI WHERE[*] NOME =? SET ORIGINEGEOGRAFICA=?, PREZZO =?, QUANTITA=?, COLORE=?  "; expected "., AS, SET"; SQL statement:
+UPDATE FIORI WHERE NOME =? SET ORIGINEGEOGRAFICA=?, PREZZO =?, QUANTITA=?, COLORE=?   [42001-200]
+2020-01-17 13:19:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE FIORI WHERE[*] NOME =? SET ORIGINEGEOGRAFICA=?, PREZZO =?, QUANTITA=?, COLORE=?  "; expected "., AS, SET"; SQL statement:
+UPDATE FIORI WHERE NOME =? SET ORIGINEGEOGRAFICA=?, PREZZO =?, QUANTITA=?, COLORE=?   [42001-200]
+2020-01-17 13:21:15 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/vince/Desktop/riccardi vincenzo/IS workspace Java/Fioraio-SYS/prova.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at it.unina.IS.dao.DBManager.getConnection(DBManager.java:13)
+	at it.unina.IS.dao.FioriDAO.createFiore(FioriDAO.java:44)
+	at it.unina.IS.main.Main.main(Main.java:37)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/vince/Desktop/riccardi vincenzo/IS workspace Java/Fioraio-SYS/prova.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 27 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/vince/Desktop/riccardi vincenzo/IS workspace Java/Fioraio-SYS/prova.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 21 more
+2020-01-17 13:21:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FIORI" not found; SQL statement:
+INSERT INTO FIORI VALUES (?,?,?,?,?) [42102-200]
