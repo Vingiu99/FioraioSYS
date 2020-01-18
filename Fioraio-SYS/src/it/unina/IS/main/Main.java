@@ -59,6 +59,8 @@ public class Main {
 		}
 		dao.dropTable();
 		
+		
+		System.out.println("Terminato");
 	}
 
 }
